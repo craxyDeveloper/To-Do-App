@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon to do.png">
+    
+    <title>To do App</title>
+    
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+     <div class="maincontainer">
+        <div class="head">
+            
+         <input type="text" placeholder="Enter your work" id="input">
+            <button class="butn">Add to list</button>
+        </div>
+        
+        <div class="container">
+            <h4 id="heading">your added task is here!</h4>
+            <ul class="list">
+               
+            </ul>
+        </div>
+     </div>
+     <script>
+        let btn=document.querySelector('button');
+let ul=document.querySelector('ul');
+
+btn.addEventListener('click',function(){
+     let inp=document.querySelector('input');
+     let li=document.createElement('li');
+     li.innerText=inp.value;
+     ul.append(li);
+     let btn=document.createElement('button');
+     
+     btn.innerText='Delete';
+     li.appendChild(btn);
+     btn.classList.add('btn2');
+     btn.onclick=function(){
+        ul.removeChild(li);
+     }
+    
+     inp.value='';
+     
+})
+
+     </script>
+    
+</body>
+</html>
+<!-- // // this is Deligation event---------------
+// ul.addEventListener('click',function(event){
+//     if(event.target.localName=='button'){
+//         let item=event.target.parentElement;
+//         item.remove();
+//     }
+// }) -->
